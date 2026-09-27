@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEXORA AGENCY - Powering Your Digital Growth. Social media, design, video, web development, automation, marketing, SEO and e-commerce services.">
+  <title>NEXORA AGENCY — Powering Your Digital Growth</title>
+  <style>
+    :root{
+      --bg:#050914; --bg2:#091225; --card:rgba(15,27,51,.72);
+      --line:rgba(92,166,255,.2); --text:#f5f8ff; --muted:#9eacc7;
+      --blue:#18bfff; --purple:#7b4dff; --cyan:#00e7ff;
+      --grad:linear-gradient(135deg,#10cfff,#5268ff 55%,#a744ff);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text); background:
+      radial-gradient(circle at 15% 10%,rgba(24,191,255,.13),transparent 30%),
+      radial-gradient(circle at 85% 15%,rgba(123,77,255,.14),transparent 28%),
+      var(--bg); line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      background:rgba(5,9,20,.76);backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line)
+    }
+    nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.5px}
+    .logo{
+      width:40px;height:40px;border-radius:12px;background:var(--grad);
+      display:grid;place-items:center;font-size:22px;font-weight:1000;
+      box-shadow:0 0 28px rgba(24,191,255,.25)
+    }
+    .brand span{font-size:18px}.brand small{display:block;color:#79dfff;font-size:9px;letter-spacing:2px}
+    .links{display:flex;gap:25px;color:#c8d3e8;font-size:14px;font-weight:700}
+    .links a:hover{color:white}
+    .menu{display:none;background:none;border:0;color:white;font-size:27px}
+    .hero{padding:150px 0 85px;min-height:720px;display:flex;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center}
+    .eyebrow{color:#70e7ff;font-weight:800;letter-spacing:3px;font-size:12px;text-transform:uppercase;margin-bottom:18px}
+    h1{font-size:clamp(45px,7vw,78px);line-height:.98;letter-spacing:-3px}
+    h1 span{background:var(--grad);-webkit-background-clip:text;color:transparent}
+    .hero p{color:var(--muted);font-size:18px;max-width:620px;margin:24px 0 30px}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap}
+    .btn{padding:13px 21px;border-radius:13px;font-weight:850;border:1px solid var(--line);display:inline-flex;align-items:center;gap:8px}
+    .btn.primary{background:var(--grad);box-shadow:0 12px 35px rgba(46,113,255,.25)}
+    .btn.secondary{background:rgba(255,255,255,.04)}
+    .hero-card{
+      min-height:430px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,rgba(19,39,75,.8),rgba(9,15,31,.8));
+      padding:30px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+      box-shadow:0 30px 90px rgba(0,0,0,.3)
+    }
+    .hero-card:before{content:"";position:absolute;width:270px;height:270px;border-radius:50%;background:rgba(24,191,255,.16);filter:blur(50px);top:-80px;right:-50px}
+    .orbit{width:245px;height:245px;border-radius:48%;border:2px solid #20caff;transform:rotate(-25deg);display:grid;place-items:center;position:relative;box-shadow:0 0 45px rgba(24,191,255,.16)}
+    .orbit:after{content:"";position:absolute;width:75px;height:75px;background:var(--grad);clip-path:polygon(20% 0,100% 0,80% 100%,0 100%);border-radius:12px;transform:rotate(25deg);box-shadow:0 0 35px rgba(82,104,255,.5)}
+    .orbit strong{z-index:2;font-size:86px;font-weight:1000;transform:rotate(25deg);text-shadow:0 0 25px rgba(24,191,255,.3)}
+    section{padding:85px 0}
+    .section-head{text-align:center;max-width:720px;margin:0 auto 42px}
+    .section-head h2{font-size:38px;letter-spacing:-1.5px}
+    .section-head p{color:var(--muted);margin-top:10px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;
+      transition:.25s;box-shadow:0 12px 40px rgba(0,0,0,.14)
+    }
+    .card:hover{transform:translateY(-5px);border-color:rgba(24,191,255,.45)}
+    .icon{width:48px;height:48px;border-radius:14px;background:rgba(24,191,255,.1);display:grid;place-items:center;font-size:24px;margin-bottom:15px}
+    .card h3{font-size:18px;margin-bottom:7px}.card p{color:var(--muted);font-size:14px}
+    .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .price{position:relative}.price .tag{position:absolute;right:16px;top:16px;font-size:10px;color:#75eaff}
+    .price h3{margin-top:5px}.amount{font-size:29px;font-weight:950;margin:10px 0}.amount small{font-size:12px;color:var(--muted);font-weight:600}
+    .list{list-style:none;color:#bdc9dc;font-size:13px;display:grid;gap:8px}.list li:before{content:"✓";color:#39dbff;font-weight:900;margin-right:7px}
+    .portfolio{grid-template-columns:repeat(3,1fr)}
+    .work{height:210px;border-radius:20px;padding:25px;display:flex;flex-direction:column;justify-content:end;overflow:hidden;position:relative;background:linear-gradient(145deg,#102b52,#14102d)}
+    .work:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(24,191,255,.18);top:-60px;right:-35px;filter:blur(15px)}
+    .work strong,.work span{position:relative;z-index:1}.work span{color:#a9b8d1;font-size:13px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+    .about-box{border:1px solid var(--line);border-radius:24px;padding:30px;background:linear-gradient(145deg,rgba(15,30,58,.8),rgba(8,13,28,.7))}
+    .about-box p{color:var(--muted);margin:12px 0 20px}
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{padding:18px;border-radius:16px;background:rgba(255,255,255,.035);border:1px solid var(--line)}.stat b{font-size:24px}.stat small{display:block;color:var(--muted)}
+    .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px}
+    form{display:grid;gap:12px}.input{width:100%;padding:14px 15px;border-radius:12px;border:1px solid var(--line);background:#07101f;color:white;outline:none}.input:focus{border-color:#29caff}
+    textarea{min-height:140px;resize:vertical}
+    footer{padding:35px 0;border-top:1px solid var(--line);color:#8e9bb4}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.social{display:flex;gap:15px}
+    .note{font-size:12px;color:#71809a;margin-top:12px}
+    @media(max-width:900px){.hero-grid,.about,.contact{grid-template-columns:1fr}.hero-card{min-height:330px}.grid{grid-template-columns:repeat(2,1fr)}.price-grid{grid-template-columns:repeat(2,1fr)}.portfolio{grid-template-columns:1fr 1fr}}
+    @media(max-width:650px){
+      .links{display:none}.menu{display:block}.hero{padding-top:125px}.grid,.price-grid,.portfolio{grid-template-columns:1fr}
+      section{padding:65px 0}.section-head h2{font-size:31px}.hero-card{display:none}h1{letter-spacing:-2px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#home"><div class="logo">N</div><div>NEXORA<small>AGENCY</small></div></a>
+      <div class="links">
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#portfolio">Portfolio</a><a href="#about">About</a><a href="#contact">Contact</a>
+      </div>
+      <button class="menu" onclick="toggleMenu()">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Digital Agency • Bangladesh</div>
+      <h1>Powering Your <span>Digital Growth.</span></h1>
+      <p>We help businesses build a stronger online presence through social media, design, video, websites, automation, marketing, SEO and e-commerce solutions.</p>
+      <div class="buttons"><a class="btn primary" href="#contact">🚀 Get Started</a><a class="btn secondary" href="#services">📋 View Services</a></div>
+    </div>
+    <div class="hero-card"><div class="orbit"><strong>N</strong></div></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">What We Do</div><h2>Our Professional Services</h2><p>Everything you need to build, promote and grow your digital brand.</p></div>
+    <div class="grid">
+      <div class="card"><div class="icon">📱</div><h3>Social Media Management</h3><p>Page management, content planning, posting and basic reporting.</p></div>
+      <div class="card"><div class="icon">📈</div><h3>Social Media Growth</h3><p>Growth campaigns, engagement and audience development.</p></div>
+      <div class="card"><div class="icon">🎨</div><h3>Graphic Design & Branding</h3><p>Logo, posts, banners, thumbnails and brand identity.</p></div>
+      <div class="card"><div class="icon">🎬</div><h3>Video & Content</h3><p>Reels, Shorts, promotional videos and motion graphics.</p></div>
+      <div class="card"><div class="icon">🌐</div><h3>Web Development</h3><p>Landing pages, business websites, e-commerce and web apps.</p></div>
+      <div class="card"><div class="icon">🤖</div><h3>Bot & Automation</h3><p>Telegram bots, Mini Apps and customer-support automation.</p></div>
+      <div class="card"><div class="icon">📣</div><h3>Digital Marketing</h3><p>Campaign setup, lead generation and marketing strategy.</p></div>
+      <div class="card"><div class="icon">🔍</div><h3>SEO Services</h3><p>Keyword research, on-page SEO and local SEO.</p></div>
+      <div class="card"><div class="icon">🛒</div><h3>E-commerce Solutions</h3><p>Store setup, product listing and store management.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">Affordable Plans</div><h2>Professional Pricing</h2><p>Budget-friendly starting prices. Final quotes depend on project requirements.</p></div>
+    <div class="price-grid">
+      <div class="card price"><span class="tag">STARTING</span><div class="icon">🎨</div><h3>Graphic Design</h3><div class="amount">৳75<small>+</small></div><ul class="list"><li>Social Post</li><li>Thumbnail</li><li>Banner from ৳125+</li></ul></div>
+      <div class="card price"><span class="tag">STARTING</span><div class="icon">🎬</div><h3>Video & Content</h3><div class="amount">৳125<small>+</small></div><ul class="list"><li>Reels / Shorts</li><li>Promo Video from ৳375+</li><li>Motion Graphics</li></ul></div>
+      <div class="card price"><span class="tag">MONTHLY</span><div class="icon">📱</div><h3>Social Media</h3><div class="amount">৳750<small>/month</small></div><ul class="list"><li>Page Management</li><li>Content Planning</li><li>Basic Reporting</li></ul></div>
+      <div class="card price"><span class="tag">STARTING</span><div class="icon">🌐</div><h3>Website</h3><div class="amount">৳750<small>+</small></div><ul class="list"><li>Landing Page</li><li>Business Website</li><li>E-commerce from ৳3,750+</li></ul></div>
+      <div class="card price"><span class="tag">STARTING</span><div class="icon">🤖</div><h3>Telegram Bot</h3><div class="amount">৳750<small>+</small></div><ul class="list"><li>Custom Bot</li><li>Mini App from ৳1,750+</li><li>Automation</li></ul></div>
+      <div class="card price"><span class="tag">STARTING</span><div class="icon">📣</div><h3>Marketing</h3><div class="amount">৳375<small>+</small></div><ul class="list"><li>Campaign Setup</li><li>Lead Generation</li><li>Strategy</li></ul></div>
+      <div class="card price"><span class="tag">MONTHLY</span><div class="icon">🔍</div><h3>SEO</h3><div class="amount">৳750<small>/month</small></div><ul class="list"><li>Basic SEO</li><li>Keyword Research</li><li>On-Page SEO</li></ul></div>
+      <div class="card price"><span class="tag">STARTING</span><div class="icon">🛒</div><h3>E-commerce</h3><div class="amount">৳1,250<small>+</small></div><ul class="list"><li>Store Setup</li><li>Product Listing ৳5/product</li><li>Store Management</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">Our Work</div><h2>Selected Portfolio</h2><p>Replace these cards with your real projects, screenshots and client work.</p></div>
+    <div class="grid portfolio">
+      <div class="work"><strong>Social Media Branding</strong><span>Design • Content • Growth</span></div>
+      <div class="work"><strong>Business Website</strong><span>Web • UI • Development</span></div>
+      <div class="work"><strong>Telegram Mini App</strong><span>Bot • Automation • UI</span></div>
+      <div class="work"><strong>Brand Identity</strong><span>Logo • Banner • Guidelines</span></div>
+      <div class="work"><strong>Marketing Campaign</strong><span>Strategy • Leads • Growth</span></div>
+      <div class="work"><strong>E-commerce Solution</strong><span>Store • Products • Marketing</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about">
+    <div>
+      <div class="eyebrow">About NEXORA</div>
+      <h2>We turn digital ideas into practical solutions.</h2>
+      <p style="color:var(--muted);margin-top:15px">NEXORA AGENCY helps businesses improve their digital presence with creative, affordable and technology-focused services.</p>
+    </div>
+    <div class="about-box">
+      <div class="stats">
+        <div class="stat"><b>9+</b><small>Service Categories</small></div>
+        <div class="stat"><b>24/7</b><small>Online Support</small></div>
+        <div class="stat"><b>100%</b><small>Project Focus</small></div>
+        <div class="stat"><b>৳75+</b><small>Affordable Starting Price</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head"><div class="eyebrow">Let's Work Together</div><h2>Start Your Project</h2><p>Send your requirements and we'll get back to you.</p></div>
+    <div class="contact">
+      <div class="card">
+        <h3>Contact NEXORA AGENCY</h3>
+        <p style="color:var(--muted);margin:12px 0 20px">For pricing, custom packages or project discussions, contact us through your preferred channel.</p>
+        <div class="list">
+          <li>📩 Facebook / Instagram</li>
+          <li>💬 WhatsApp</li>
+          <li>📱 Telegram</li>
+          <li>📧 Email</li>
+        </div>
+        <p class="note">Replace the links below with your real contact links before publishing.</p>
+      </div>
+      <div class="card">
+        <form onsubmit="sendMessage(event)">
+          <input class="input" id="name" placeholder="Your Name" required>
+          <input class="input" id="contactInfo" placeholder="Email / WhatsApp / Telegram" required>
+          <select class="input" id="service"><option>Choose a Service</option><option>Social Media</option><option>Graphic Design</option><option>Video Editing</option><option>Website</option><option>Telegram Bot / Mini App</option><option>Digital Marketing</option><option>SEO</option><option>E-commerce</option></select>
+          <textarea class="input" id="message" placeholder="Tell us about your project..." required></textarea>
+          <button class="btn primary" type="submit">🚀 Send Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div><strong>NEXORA AGENCY</strong><div>Powering Your Digital Growth</div></div>
+    <div class="social"><a href="#contact">Facebook</a><a href="#contact">Instagram</a><a href="#contact">Telegram</a></div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  const l=document.querySelector('.links');
+  l.style.display=l.style.display==='flex'?'none':'flex';
+  if(l.style.display==='flex'){
+    l.style.position='absolute';l.style.top='72px';l.style.left='4%';l.style.right='4%';
+    l.style.padding='18px';l.style.flexDirection='column';l.style.background='#091225';
+    l.style.border='1px solid rgba(92,166,255,.2)';l.style.borderRadius='16px';
+  }
+}
+function sendMessage(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  const contact=document.getElementById('contactInfo').value;
+  const service=document.getElementById('service').value;
+  const msg=document.getElementById('message').value;
+  const text=`Hello NEXORA AGENCY!%0A%0AName: ${encodeURIComponent(name)}%0AContact: ${encodeURIComponent(contact)}%0AService: ${encodeURIComponent(service)}%0AProject: ${encodeURIComponent(msg)}`;
+  alert("Your request is ready. Connect your WhatsApp/Telegram link in the code to send it directly.");
+  console.log(decodeURIComponent(text));
+}
+</script>
+</body>
+</html>
